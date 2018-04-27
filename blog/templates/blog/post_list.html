@@ -6,17 +6,12 @@
         <div>
             <h1><a href="/">Denis Blog</a></h1>
         </div>
-
-        <div>
-            <p>published: 27.04.2018, 12:14</p>
-            <h2><a href="">My first post</a></h2>
-            <p>Firs post .</p>
-        </div>
-
-        <div>
-            <p>published: 28.04.2018, 16:10</p>
-            <h2><a href="">My second post</a></h2>
-            <p>Second post . </p>
-        </div>
+        {% for post in posts %}
+		<div>
+			<p> published: {{ post.published_date }} </p>
+			<h1> <a href=""> {{ post.title }} </a> </h1>
+                        <p> {{ post.text|linebreaksbr }} </p>
+		</div>
+	{% endfor %}
     </body>
 </html>
